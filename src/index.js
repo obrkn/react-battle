@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import './index.css';
 import reducer from './reducers';
 import App from './components/App';
-import Dice from './components/Dice';
+import RollDice from './components/RollDice';
 import * as serviceWorker from './serviceWorker';
 
 const store = createStore(reducer)
@@ -14,7 +14,7 @@ const store = createStore(reducer)
 ReactDOM.render(
   <Provider store={store}>
     <App />
-    <Dice />
+    <RollDice />
   </Provider>,
   document.getElementById('root')
 );
