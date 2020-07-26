@@ -1,10 +1,15 @@
-export const ATTACK = 'ATTACK'
-export const NEXT = 'NEXT'
+export const START = 'START'
+export const HERO_ATTACK = 'HERO_ATTACK'
+export const ENEMY_ATTACK = 'ENEMY_ATTACK'
 
-export const attack = () => ({
-  type: ATTACK
+export const start = () => ({
+  type: START
 })
 
-export const next = () => ({
-  type: NEXT
+export const hero_attack = () => ({
+  type: HERO_ATTACK
+})
+
+export const enemy_attack = () => ({
+  type: ENEMY_ATTACK
 })

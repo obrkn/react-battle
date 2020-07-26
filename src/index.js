@@ -1,20 +1,24 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
+// import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+// import thunk from 'redux-thunk'
+// import { composeWithDevTools } from 'redux-devtools-extension'
 
 import './index.css';
 import reducer from './reducers';
 import App from './components/App';
-import RollDice from './components/RollDice';
 import * as serviceWorker from './serviceWorker';
 
+// const enhancer = process.env.NODE_ENV === 'development' ?
+//   composeWithDevTools(applyMiddleware(thunk)) : applyMiddleware(thunk)
+// const store = createStore(reducer, enhancer)
 const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
     <App />
-    <RollDice />
   </Provider>,
   document.getElementById('root')
 );
