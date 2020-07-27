@@ -5,10 +5,12 @@ import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 // import thunk from 'redux-thunk'
 // import { composeWithDevTools } from 'redux-devtools-extension'
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import './index.css';
 import reducer from './reducers';
-import App from './components/App';
+import Registration from './components/Registration';
+import Battle from './components/Battle';
 import * as serviceWorker from './serviceWorker';
 
 // const enhancer = process.env.NODE_ENV === 'development' ?
@@ -18,7 +20,12 @@ const store = createStore(reducer)
 
 ReactDOM.render(
   <Provider store={store}>
-    <App />
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={Registration} />
+        <Route exact path="/battle" component={Battle} />
+      </Switch>
+    </BrowserRouter>
   </Provider>,
   document.getElementById('root')
 );
